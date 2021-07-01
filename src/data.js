@@ -2,13 +2,13 @@ const tasks = [
   {
     id: 1,
     name: "Returnl",
-    discription: "discription",
+    description: "description",
     status: true,
   },
   {
     id: 1,
     name: "tsak2",
-    discription: "discription2",
+    description: "description2",
     status: true,
   },
 ];
