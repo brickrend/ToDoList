@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const ItemWrapper = styled.div`
   border: solid;
   border-radius: 20px;
-  flex: auto;
-  margin: 0 70% 5px 5em;
+  margin: 30px 30px;
+  height: 100px;
+  width: 200px;
+  display: block;
 `;
