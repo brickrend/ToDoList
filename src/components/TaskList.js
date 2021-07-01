@@ -1,9 +1,24 @@
 import TaskItem from "./TaskItem";
-import tasks from "../data";
+import storeInstance from "../store/taskStore";
+import { useState } from "react";
+import ToDoForm from "./ToDoForm";
+import { observer } from "mobx-react";
 
 const TaskList = () => {
-  const taskList = tasks.map((task) => <TaskItem task={task} key={task.id} />);
-  return <div>{taskList}</div>;
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
+  const taskList = storeInstance.tasks.map((task) => (
+    <TaskItem task={task} key={task.id} />
+  ));
+  return (
+    <div>
+      <button onClick={openModal}>Add</button>
+      <ToDoForm isOpen={isOpen} closeModal={closeModal} />
+      {taskList}
+    </div>
+  );
 };
 
-export default TaskList;
+export default observer(TaskList);
