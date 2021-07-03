@@ -9,7 +9,6 @@ class taskStore {
   constructor() {
     makeAutoObservable(this);
   }
-
   getTask = async () => {
     try {
       const response = await axios.get("http://localhost:8000/tasks");
@@ -21,8 +20,8 @@ class taskStore {
 
   createTask = async (newTask) => {
     try {
-      const response = await axios.post("http://localhost:8000/tasks", newTask);
-      this.tasks.push(response.data);
+      await axios.post("http://localhost:8000/tasks");
+      this.tasks.push(newTask);
     } catch (error) {
       console.error(error);
     }
