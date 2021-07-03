@@ -20,8 +20,8 @@ class taskStore {
 
   createTask = async (newTask) => {
     try {
-      await axios.post("http://localhost:8000/tasks");
-      this.tasks.push(newTask);
+      const response = await axios.post("http://localhost:8000/tasks", newTask);
+      this.tasks.push(response.data);
     } catch (error) {
       console.error(error);
     }
