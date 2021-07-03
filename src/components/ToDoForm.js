@@ -4,7 +4,7 @@ import storeInstance from "../store/taskStore";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 
-function ToDoForm(props) {
+const ToDoForm = (props) => {
   const [input, setInput] = useState({
     name: "",
     description: "",
@@ -60,5 +60,5 @@ function ToDoForm(props) {
       </form>
     </Modal>
   );
-}
+};
 export default ToDoForm;
