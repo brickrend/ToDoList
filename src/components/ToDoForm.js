@@ -73,9 +73,6 @@ function ToDoForm(props) {
           ></input>
         </div>
         <button>submit</button>
-        {/* <AddBtnStyled type="submit">
-        {props.oldProduct ? "Update" : "Add"}
-      </AddBtnStyled> */}
       </form>
     </Modal>
   );

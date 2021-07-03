@@ -16,8 +16,9 @@ const TaskList = () => {
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
-  const taskList = storeInstance.tasks.map((task) => {
-    if (task.status === true) {
+  const taskList = storeInstance.tasks
+    .filter((task) => task.status === false)
+    .map((task) => {
       return (
         <TaskItem
           task={task}
@@ -25,8 +26,7 @@ const TaskList = () => {
           deleteTask={storeInstance.DeleteTask}
         />
       );
-    }
-  });
+    });
 
   return (
     <ListWrpper>
