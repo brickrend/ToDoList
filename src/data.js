@@ -9,7 +9,7 @@ const tasks = [
     id: 2,
     name: "As a user, I can add a new task (40)",
     description: "description2",
-    status: true,
+    status: false,
   },
 ];
 

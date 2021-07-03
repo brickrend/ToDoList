@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import storeInstance from "../store/taskStore";
+// styled components
 
 function ToDoForm(props) {
   const [input, setInput] = useState({
@@ -40,7 +41,18 @@ function ToDoForm(props) {
     //   />
     //   <button>Add to-do</button>
     // </form>
-    <Modal isOpen={props.isOpen} closeModal={props.closeModal}>
+    <Modal
+      style={{
+        overlay: {
+          display: "block",
+          width: "300px",
+          height: "400px",
+          position: "absolute",
+        },
+      }}
+      isOpen={props.isOpen}
+      closeModal={props.closeModal}
+    >
       <form onSubmit={handleSubmit} class="row g-3">
         <div class="col-md-6">
           <input
