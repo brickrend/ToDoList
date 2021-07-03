@@ -1,6 +1,6 @@
-// styled components
 import { ItemWrapper } from "../styles";
 import { observer } from "mobx-react";
+import storeInstance from "../store/taskStore";
 
 const TaskItem = (props) => {
   const handleClick = () => {
@@ -12,7 +12,7 @@ const TaskItem = (props) => {
   };
 
   const handleDelete = () => {
-    props.deleteTask(props.task.id);
+    storeInstance.deleteTask(props.task.id);
   };
 
   return (

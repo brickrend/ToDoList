@@ -1,24 +1,15 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import storeInstance from "../store/taskStore";
-// styled components
+import { RiCloseCircleLine } from "react-icons/ri";
+import { TiEdit } from "react-icons/ti";
 
 function ToDoForm(props) {
   const [input, setInput] = useState({
     name: "",
     description: "",
   });
-
-  // const handleChange = (event) => {
-  //   setInput(event.target.value);
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   // props.onSubmit({
-  //   //   text: input,
-  //   setInput("");
-  // };
+  const priorities = ["high", "middle", "low"];
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -31,16 +22,6 @@ function ToDoForm(props) {
     // create the product function
   };
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <input
-    //     type="text"
-    //     placeholder="Add a To-do"
-    //     value={input}
-    //     name="text"
-    //     onChange={handleChange}
-    //   />
-    //   <button>Add to-do</button>
-    // </form>
     <Modal
       style={{
         overlay: {
@@ -59,23 +40,23 @@ function ToDoForm(props) {
             type="text"
             class="form-control"
             name="name"
-            placeholder="Name"
+            placeholder="Task"
             onChange={handleChange}
-          ></input>
+          />
+          <TiEdit />
         </div>
         <div class="col-md-6">
           <input
+            id="standard-basic"
             type="text"
             class="form-control"
             name="description"
-            placeholder="text"
+            placeholder="Description"
             onChange={handleChange}
           ></input>
         </div>
+
         <button>submit</button>
-        {/* <AddBtnStyled type="submit">
-        {props.oldProduct ? "Update" : "Add"}
-      </AddBtnStyled> */}
       </form>
     </Modal>
   );
