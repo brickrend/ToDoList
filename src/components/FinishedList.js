@@ -4,17 +4,19 @@ import TaskItem from "./TaskItem";
 import { FinishedListWrpper } from "../styles";
 
 const FinishedList = () => {
-  const finishedList = storeInstance.tasks
-    .filter((task) => task.status === true)
-    .map((task) => {
-      return (
-        <TaskItem
-          task={task}
-          key={task.id}
-          deleteTask={storeInstance.deleteTask}
-        />
-      );
-    });
+  const filterTrue = storeInstance.tasks.filter((task) => {
+    return task.status === true;
+  });
+
+  const finishedList = filterTrue.map((task) => {
+    return (
+      <TaskItem
+        task={task}
+        key={task.id}
+        deleteTask={storeInstance.deleteTask}
+      />
+    );
+  });
 
   return <FinishedListWrpper>{finishedList}</FinishedListWrpper>;
 };

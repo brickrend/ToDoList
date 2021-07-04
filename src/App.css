@@ -103,3 +103,14 @@ h1 {
   color: #fff;
   text-transform: capitalize;
 }
+.todo {
+  display: flex;
+  flex-direction: column;
+}
+.todo-text {
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}

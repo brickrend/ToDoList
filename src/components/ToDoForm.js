@@ -9,7 +9,6 @@ const ToDoForm = (props) => {
     name: "",
     description: "",
   });
-  const priorities = ["high", "middle", "low"];
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });

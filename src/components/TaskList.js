@@ -3,19 +3,27 @@ import storeInstance from "../store/taskStore";
 import { useState } from "react";
 import ToDoForm from "./ToDoForm";
 import { observer } from "mobx-react";
+import { AddButton } from "../styles";
 
 const TaskList = () => {
   const [isOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
-  const taskList = storeInstance.tasks.map((task) => (
-    <TaskItem task={task} key={task.id} />
-  ));
+  const filterFalse = storeInstance.tasks.filter((task) => {
+    return task.status === false;
+  });
+
+  const taskList = filterFalse.map((task) => {
+    return <TaskItem task={task} key={task.id} />;
+  });
+
   return (
     <div>
-      <button onClick={openModal}>Add</button>
-      <ToDoForm isOpen={isOpen} closeModal={closeModal} />
+      <AddButton>
+        <button onClick={openModal}>Add</button>
+        <ToDoForm isOpen={isOpen} closeModal={closeModal} />
+      </AddButton>
       {taskList}
     </div>
   );

@@ -34,10 +34,20 @@ export const taskInput = styled.button`
   background: transparent;
   color: #fff;
 `;
-export const todoButton = styled.div`
+export const todoButton = styled.button`
   padding: 16px;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 2 18px 18px 2;
 
   outline: none;
+`;
+
+export const date = styled.div`
+  padding: 16px;
+`;
+export const AddButton = styled.button`
+  width: 100px;
+  padding: 4px;
+  border-radius: 7px;
+  margin-top: 14px;
 `;

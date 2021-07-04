@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h1>Get up and finish!</h1>
+        <h1>What's the plan today?</h1>
         <TaskList />
       </div>
       <div>
